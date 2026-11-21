@@ -17,83 +17,65 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-    
+    @import url('https://googleapis.com');
+
     html, body, [class*="css"] {
         font-family: 'Plus Jakarta Sans', sans-serif;
     }
-    
+
+    .stApp {
+        background: radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.16), transparent 40%),
+                    radial-gradient(circle at 85% 20%, rgba(14, 165, 233, 0.14), transparent 40%),
+                    #0B0F19;
+    }
+
     .hero-banner {
-        background: linear-gradient(135deg, #1e1e38 0%, #2d1b4e 50%, #172554 100%);
+        background: linear-gradient(135deg, rgba(30, 27, 75, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
         padding: 2.2rem 2.5rem;
-        border-radius: 18px;
-        color: white;
-        margin-bottom: 2rem;
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .hero-title {
-        font-size: 2.2rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        margin: 0;
-        background: linear-gradient(90deg, #ffffff 0%, #cbd5e1 50%, #93c5fd 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .hero-subtitle {
-        font-size: 1.05rem;
-        color: #94a3b8;
-        margin-top: 0.5rem;
-        font-weight: 400;
-    }
-
-    .metric-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 14px;
-        padding: 1.2rem;
-        text-align: center;
-        transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-    .metric-card:hover {
-        transform: translateY(-2px);
-        border-color: rgba(99, 102, 241, 0.4);
-    }
-
-    .section-title {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #e2e8f0;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .badge-primary {
-        background: #3b82f6;
-        color: white;
-        padding: 4px 10px;
         border-radius: 20px;
-        font-size: 0.75rem;
+        color: #F8FAFC;
+        margin-bottom: 2rem;
+        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 25px rgba(99, 102, 241, 0.2);
+        border: 1px solid rgba(129, 140, 248, 0.35);
+        backdrop-filter: blur(16px);
+    }
+
+    /* सभी बटन को मॉडर्न ग्रेडिएंट लुक दें */
+    div.stButton > button {
+        background: linear-gradient(90deg, #6366F1 0%, #3B82F6 100%);
+        color: #FFFFFF;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 0.6rem 1.3rem;
         font-weight: 600;
+        transition: all 0.25s ease;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
     }
-    
-    .report-box {
-        background: #0f172a;
-        border: 1px solid #1e293b;
-        border-radius: 14px;
-        padding: 1.75rem;
-        color: #e2e8f0;
-        line-height: 1.7;
+    div.stButton > button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6);
+        border-color: rgba(255, 255, 255, 0.4);
     }
+
+    /* टेक्स्ट बॉक्स और अपलोडर को ग्लास कार्ड बनाएं */
+    .stTextArea textarea, [data-testid="stFileUploader"] section {
+        background-color: rgba(19, 26, 42, 0.85) !important;
+        border: 1px solid rgba(148, 163, 184, 0.25) !important;
+        border-radius: 14px !important;
+        color: #F8FAFC !important;
+    }
+
+    /* टैब्स (Tabs) को क्लीन पिल स्टाइल दें */
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
+        background-color: rgba(19, 26, 42, 0.7);
+        padding: 6px;
+        border-radius: 14px;
+        border: 1px solid rgba(148, 163, 184, 0.15);
     }
     .stTabs [data-baseweb="tab"] {
         border-radius: 10px;
-        padding: 10px 20px;
+        padding: 8px 16px;
         font-weight: 600;
     }
 </style>
