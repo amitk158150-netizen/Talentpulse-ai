@@ -10,10 +10,12 @@ load_dotenv()
 
 st.set_page_config(
     page_title="TalentPulse AI | Resume Analyzer & Interview Coach",
-    page_icon="⚡",
+    page_icon="logo.png",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+st.logo("logo.png")
 
 st.markdown("""
 <style>
