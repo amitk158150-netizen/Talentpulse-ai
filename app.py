@@ -8,14 +8,16 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+icon_path = "logo.png" if os.path.exists("logo.png") else "⚡"
 st.set_page_config(
     page_title="TalentPulse AI | Resume Analyzer & Interview Coach",
-    page_icon="logo.png",
+    page_icon=icon_path,
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-st.logo("logo.png")
+if os.path.exists("logo.png"):
+    st.logo("logo.png")
 
 st.markdown("""
 <style>
