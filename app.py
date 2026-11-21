@@ -124,7 +124,7 @@ with st.sidebar:
 
 client = genai.Client(api_key=api_key) if api_key else None
 
-MODELS_TO_TRY = ["gemini-3.8-flash"]
+MODELS_TO_TRY = ["gemini-3-flash-preview", "gemini-2.5-flash-lite"]
 
 def generate_ai_response(prompt: str) -> str:
     """
